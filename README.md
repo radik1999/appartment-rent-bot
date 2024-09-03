@@ -1,4 +1,4 @@
-# LaIQ Muse
+# Django Template project
 
 ## Table of Contents
 
