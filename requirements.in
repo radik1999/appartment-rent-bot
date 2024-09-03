@@ -1,0 +1,11 @@
+Django==5.0.6
+djangorestframework==3.15.2
+drf-spectacular==0.27.2
+python-dotenv==1.0.1
+psycopg2-binary==2.9.9
+python-json-logger==2.0.7
+pytest==8.2.2
+pytest-django==4.8.0
+django-extensions==3.2.3
+djangorestframework-camel-case==1.4.2
+django_cors_headers==4.4.0

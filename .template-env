@@ -1,0 +1,29 @@
+# django secret key
+SECRET_KEY="django-insecure-k-your-key*22&8+yom0dr+yqv9^qlgn(l6t@o)we&9(z^^=("
+
+# turns debug mode on or off. Pick from True | False | 1 | 0 | on | off
+DEBUG=True
+
+# db settings from django project
+DB_HOST=localhost
+DB_NAME=kpmg-lmm-dev
+DB_PORT=5432
+DB_USER=kpmg_user
+DB_PASSWORD=WghmtxtjAaZpWRJtPfmRTMwJOJ7ha9R1
+DB_INSTANCE=psql-db-dev
+
+# log mode for backend logs. Pick from text | json
+LOG_FORMAT_MODE=text
+
+# log level for backend logs. Pick from DEBUG | INFO | WARNING | ERROR
+LOG_LEVEL=DEBUG
+
+#client host to trigger backend, separate with coma
+ALLOWED_HOSTS=0.0.0.0,localhost,127.0.0.1
+
+# put your frontend host here if it is different
+ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000,http://0.0.0.0:3000
+
+# admin_default settings
+DEFAULT_SUPERUSER_PASSWORD=SuperStrongAdminPassword999@!
+DEFAULT_SUPERUSER_NAME=admin_default

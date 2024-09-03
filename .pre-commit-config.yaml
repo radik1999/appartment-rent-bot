@@ -1,0 +1,111 @@
+default_language_version:
+    python: python3.12
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+    -   id: check-yaml
+    -   id: no-commit-to-branch
+        args:
+          - --branch
+          - main
+          - --branch
+          - dev
+          - --branch
+          - staging
+          - --branch
+          - qa
+    -   id: check-merge-conflict
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.13.2
+    hooks:
+    -   id: isort
+        args: ["--profile", "black", "--filter-files"]
+-   repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+    -   id: black
+        args: [--line-length=120]
+-   repo: https://github.com/PyCQA/flake8
+    rev: 7.1.0
+    hooks:
+    -   id: flake8
+        args: [--config, tox.ini, --count]
+        additional_dependencies: [
+            flake8-bugbear==24.4.26,
+            flake8-django==1.1.1,
+            pep8-naming==0.13.0,
+            flake8-comprehensions==3.14.0,
+            flake8-spellcheck==0.25.0,
+            flake8-pytest-style==1.7.0
+        ]
+-   repo: https://github.com/PyCQA/bandit
+    rev: 1.7.4
+    hooks:
+    -   id: bandit
+        args: ['-r', '-t', 'B102,B110,B112,B608,B610,B611,B701', '-lll', '-ii', '-x', 'src/']
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.1
+    hooks:
+    -   id: mypy
+        pass_filenames: false
+
+        args: ['--ignore-missing-imports',
+               '--no-strict-optional',
+               '--show-column-numbers',
+               '--show-error-codes',
+               '--pretty',
+               '--no-warn-no-return',
+               '--install-types',
+               '--non-interactive',
+               '--allow-redefinition',
+               '--namespace-packages',
+               '--show-error-context',
+               '--disallow-incomplete-defs',
+               '--check-untyped-defs',
+               '--disable-error-code', 'index',
+               '--disable-error-code', 'assignment',
+               '--disable-error-code', 'dict-item',
+               '--disable-error-code', 'return-value',
+               '--disable-error-code', 'arg-type',
+               '--disable-error-code', 'override',
+               '--disable-error-code', 'has-type',
+               '--disable-error-code', 'misc',
+               '--disable-error-code', 'attr-defined',
+               '--disable-error-code', 'operator',
+               '--disable-error-code', 'list-item',
+               '--disable-error-code', 'call-arg',
+               '--disable-error-code', 'call-overload',
+               '--disable-error-code', 'union-attr',
+#               '--disable-error-code', 'valid-type',
+               '--disable-error-code', 'var-annotated',
+               '--disable-error-code', 'no-redef',
+               'src/'
+               '--exclude', '.*/tests',
+               '--exclude', '.*/migrations',
+        ]
+        additional_dependencies: [tokenize-rt==3.2.0]
+-   repo: local
+    hooks:
+    -   id: django-check
+        name: Check for common problems
+        entry: sh -c 'python src/manage.py check'
+        language: system
+        types: [python]
+        pass_filenames: false
+    -   id: check-absent-migrations
+        name: Check for missing migrations
+        entry: sh -c 'python src/manage.py makemigrations --check --dry-run'
+        language: system
+        files: models.py
+        types: [python]
+        pass_filenames: false
+    -   id: check-unapplied-migrations
+        name: Check for unapplied migrations
+        entry: sh -c 'python src/manage.py migrate --check'
+        language: system
+        types: [python]
+        pass_filenames: false
