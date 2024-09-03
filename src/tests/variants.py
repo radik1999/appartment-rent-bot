@@ -1,5 +1,6 @@
 from typing import Callable, List, NamedTuple
 
+
 class Variant(NamedTuple):
     view: Callable
     name: str

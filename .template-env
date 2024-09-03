@@ -6,9 +6,9 @@ DEBUG=True
 
 # db settings from django project
 DB_HOST=localhost
-DB_NAME=kpmg-lmm-dev
+DB_NAME=db_dev
 DB_PORT=5432
-DB_USER=kpmg_user
+DB_USER=dev_user
 DB_PASSWORD=WghmtxtjAaZpWRJtPfmRTMwJOJ7ha9R1
 DB_INSTANCE=psql-db-dev
 

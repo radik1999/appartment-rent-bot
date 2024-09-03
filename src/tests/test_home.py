@@ -4,7 +4,6 @@ from rest_framework import status
 from home.views import HomeView
 from tests.variants import Variant
 
-
 variants = [
     (
         "Home view",
@@ -16,7 +15,6 @@ variants = [
         ),
     ),
 ]
-
 
 
 @pytest.mark.parametrize("test_name, variant", variants)

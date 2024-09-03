@@ -1,15 +1,13 @@
-
 import urllib
-from django.urls import reverse
-import pytest
 
+import pytest
+from django.contrib.auth import get_user_model
+from django.core.handlers.wsgi import WSGIRequest
+from django.urls import reverse
 from rest_framework.test import APIRequestFactory
 
-from django.core.handlers.wsgi import WSGIRequest
-
-from django.contrib.auth import get_user_model
-
 User = get_user_model()
+
 
 @pytest.fixture
 def api_request():

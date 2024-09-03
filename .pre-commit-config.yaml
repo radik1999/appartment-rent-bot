@@ -52,7 +52,6 @@ repos:
     hooks:
     -   id: mypy
         pass_filenames: false
-
         args: ['--ignore-missing-imports',
                '--no-strict-optional',
                '--show-column-numbers',
@@ -83,7 +82,7 @@ repos:
 #               '--disable-error-code', 'valid-type',
                '--disable-error-code', 'var-annotated',
                '--disable-error-code', 'no-redef',
-               'src/'
+               'src/',
                '--exclude', '.*/tests',
                '--exclude', '.*/migrations',
         ]

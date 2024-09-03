@@ -1,8 +1,8 @@
-from rest_framework.views import APIView
+from drf_spectacular.utils import OpenApiResponse, extend_schema, inline_serializer
+from rest_framework import serializers, status
 from rest_framework.request import Request
 from rest_framework.response import Response
-from rest_framework import status, serializers
-from drf_spectacular.utils import OpenApiResponse, extend_schema, inline_serializer
+from rest_framework.views import APIView
 
 
 class HomeView(APIView):
