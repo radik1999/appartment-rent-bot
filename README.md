@@ -1,4 +1,4 @@
-# Django Template project
+# Loan Schedule API
 
 ## Table of Contents
 
