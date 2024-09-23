@@ -1,17 +1,16 @@
-# Loan Schedule API
+# Appartment rent telegram bot
 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Setup](#setup)
+- [Start bot](#start-app)
+- [Setup for development](#setup)
     - [Python 3.12](#python-312)
     - [Install Requirements](#install-requirements)
     - [Generate .env File](#generate-env-file)
     - [Install Pre-commit](#install-pre-commit)
     - [Install Tox](#install-tox)
 - [Usage](#usage)
-    - [Run Docker Compose for Database](#run-docker-compose-for-database)
-    - [Start Server](#start-server)
     - [Run Tox](#run-tox)
     - [Run Pre-commit Manually](#run-pre-commit-manually)
 
@@ -21,7 +20,20 @@
 Brief description of the project and its purpose.
 
 
-## Setup
+## Start app
+
+To run backend server locally please follow the steps below:
+
+* run docker-compose:
+```bash
+docker-compose -f docker-compose.local.yaml up --build -d
+```
+
+* enjoy backend with url http://localhost:8000/.
+
+
+
+## Setup for development
 
 ### Python 3.12
 
@@ -146,25 +158,3 @@ to skip pre-commit checks use:
 ```bash
 SKIP=django-check pre-commit run
 ```
-
-## Local development with Docker/For other teams
-
-To run backend server locally please follow the steps below:
-* create `.env` file in root dir and copy `.template-env` to `.env` and adjust the values if needed:
-```bash
-cp .template-env .env
-```
-* run docker-compose:
-```bash
-docker-compose -f docker-compose.local.yaml up --build -d
-```
-
-* enjoy backend with url http://localhost:8000/.
-* admin panel available at http://localhost:8000/admin/ with credentials in `.env` file.
-Here you can put some static data to check the frontend or manualy fix something.
-
-### APIs Documentation
-
-To view APIs documentation go to [/api/docs/](http://localhost:8000/api/docs/)
-
-To download APIs schema for testing tools go to [/api/schema/](http://localhost:8000/api/schema/)
