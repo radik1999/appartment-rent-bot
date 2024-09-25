@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "appartment",
+    "telegram_bot",
     "api",
 ]
 
@@ -195,3 +197,5 @@ LOGGING = {
 DEFAULT_SUPERUSER_PASSWORD = os.environ.get("DEFAULT_SUPERUSER_PASSWORD")
 DEFAULT_SUPERUSER_NAME = os.environ.get("DEFAULT_SUPERUSER_NAME", "admin_default")
 DEFAULT_SUPERUSER_EMAIL = os.environ.get("DEFAULT_SUPERUSER_EMAIL", "admin_default@main.com")
+
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")

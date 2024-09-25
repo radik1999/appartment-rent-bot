@@ -10,7 +10,6 @@ DB_NAME=db_dev
 DB_PORT=5432
 DB_USER=dev_user
 DB_PASSWORD=WghmtxtjAaZpWRJtPfmRTMwJOJ7ha9R1
-DB_INSTANCE=psql-db-dev
 
 # log mode for backend logs. Pick from text | json
 LOG_FORMAT_MODE=text
@@ -27,3 +26,5 @@ ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000,http://0.0.0.0:3000
 # admin_default settings
 DEFAULT_SUPERUSER_PASSWORD=SuperStrongAdminPassword999@!
 DEFAULT_SUPERUSER_NAME=admin_default
+
+TELEGRAM_BOT_TOKEN=faketoken

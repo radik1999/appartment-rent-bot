@@ -1,0 +1,29 @@
+[
+    {
+        "model": "appartment.appartmentowner",
+        "pk": 1,
+        "fields": {
+            "first_name": "Ivan",
+            "last_name": "Ivanov",
+            "phone_number": "0914831374"
+        }
+    },
+    {
+        "model": "appartment.appartment",
+        "pk": 1,
+        "fields": {
+            "room_number": 1,
+            "cost_per_month": 300,
+            "owner": 1
+        }
+    },
+    {
+        "model": "appartment.appartment",
+        "pk": 2,
+        "fields": {
+            "room_number": 2,
+            "cost_per_month": 400,
+            "owner": 1
+        }
+    }
+]
